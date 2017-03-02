@@ -20,6 +20,8 @@ class ResetPasswordController extends Controller
 
     use ResetsPasswords;
 
+    protected $redirectTo = '/';
+
     /**
      * Create a new controller instance.
      *
@@ -29,4 +31,9 @@ class ResetPasswordController extends Controller
     {
         $this->middleware('guest');
     }
+    
+    protected function redirectPath() {
+        return session()->has('url.intended') ? session('url.intended') : $this->redirectTo;
+    }
+
 }

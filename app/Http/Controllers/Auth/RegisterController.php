@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers\Auth;
 
+use DB;
+use Mail;
 use App\User;
 use Validator;
+use Illuminate\Http\Request;
+use App\Mail\EmailVerification;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
+
 
 class RegisterController extends Controller
 {
@@ -22,12 +27,15 @@ class RegisterController extends Controller
 
     use RegistersUsers;
 
+
     /**
      * Where to redirect users after login / registration.
      *
      * @var string
      */
     protected $redirectTo = '/';
+
+    // protected  $verificationErrorView = 'laravel-user-verification::user-verification';
 
     /**
      * Create a new controller instance.
@@ -66,6 +74,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'email_token' => uniqid('72coder', true),
         ]);
     }
 
@@ -73,6 +82,46 @@ class RegisterController extends Controller
 
         return session()->has('url.intended') ? session('url.intended') : $this->redirectTo;
 
+    }
+
+
+    /**
+     *  Over-ridden the register method from the "RegistersUsers" trait
+     *  Remember to take care while upgrading laravel
+     */
+    public function register(Request $request)
+    {
+        // Laravel validation
+        $validator = $this->validator($request->all());
+        if ($validator->fails())
+        {
+            $this->throwValidationException($request, $validator);
+        }
+        // Using database transactions is useful here because stuff happening is actually a transaction
+        // I don't know what I said in the last line! Weird!
+        DB::beginTransaction();
+        try
+        {
+            $user = $this->create($request->all());
+            // After creating the user send an email with the random token generated in the create method above
+            $email = new EmailVerification(new User(['email_token' => $user->email_token, 'name' => $user->name]));
+            Mail::to($user->email)->send($email);
+            DB::commit();
+            return redirect()->to('login')->with('status', 'We have sent you an email message. Please check your email to login.');
+        }
+        catch(\Exception $e)
+        {
+            DB::rollback();
+            return back()->with('warning', 'Please type real email!');
+        }
+    }
+
+    public function verify($token)
+    {
+        // The verified method has been added to the user model and chained here
+        // for better readability
+        User::where('email_token',$token)->firstOrFail()->verified();
+        return redirect('login')->with('status', 'Verified successfully. Ok to Login');
     }
 
 }

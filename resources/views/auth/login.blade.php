@@ -23,6 +23,16 @@
                     <div class="login-form tc-padding">
                     <form class="sending-form" method="post" action="{{ url('/login') }}">
                         {{ csrf_field() }}
+
+                        @if ( session('status'))
+                            <div class="alert alert-success">
+                                <p>
+                                    {{ session('status') }}
+                                </p>
+                            </div>
+                        @endif
+
+
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <input class="form-control" placeholder="Email Address" value="{{ old('email') }}" name="email" required autofocus>
                             @if ($errors->has('email'))

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Remainder;
 use App\PageView;
 use Illuminate\Http\Request;
+use Mail;
 
 class IndexController extends Controller
 {
@@ -38,6 +40,15 @@ class IndexController extends Controller
             $page_view->save();
         }
 
+    }
+
+    public function testMail() {
+
+        $mail = 'minthetnaing90@gmail.com';
+
+        Mail::to($mail)->send(new Remainder());
+
+        dd('Mail send successfully!');
     }
 
 }

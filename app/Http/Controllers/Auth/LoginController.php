@@ -64,4 +64,13 @@ class LoginController extends Controller
         return redirect()->back();
     }
 
+    public function credentials(Request $request)
+    {
+        return [
+            'email' => $request->email,
+            'password' => $request->password,
+            'verified' => 1,
+        ];
+    }
+
 }

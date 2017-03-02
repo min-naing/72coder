@@ -23,6 +23,15 @@
                     <div class="register-form tc-padding">
                         <form class="sending-form" action="{{ url('/register') }}" method="post">
                             {{ csrf_field() }}
+
+                            @if ( session('warning') )
+                                <div class="alert alert-warning">
+                                    <p>
+                                        {{ session('warning') }}
+                                    </p>
+                                </div>
+                            @endif
+
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                 <input class="form-control" required="required" placeholder="Full name" name="name" value="{{ old('name') }}" autofocus>
                                 @if ($errors->has('name'))
@@ -58,6 +67,7 @@
 
                             {{--<p class="terms">You agree to the hldy.hr <a href="#">Terms &amp; Conditions</a></p>--}}
                             <button type="submit" class="btn-1 shadow-0 full-width">Register account</button>
+                            <a class="btn btn-link" href="{{ url('/login') }}">Have a account login here</a>
                         </form>
                     </div>
 
