@@ -1,0 +1,148 @@
+
+@font-face {
+    font-family: 'Zawgyi-One';
+    src: url('fonts/Zawgyi-One.ttf');
+}
+
+.product-box img.service {
+    padding: 10px 10px 0;
+    height: 200px !important;
+}
+
+.main-heading {
+    padding: 100px 0 0;
+}
+
+.tc-padding {
+    //padding: 0 0 50px;
+}
+
+.product-detail h4{
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0 0 20px;
+}
+
+.burmese {
+    font-family: "Zawgyi-One";
+    line-height: 30px !important;
+    text-align: justify;
+}
+
+.myanmar {
+    font-family: "Zawgyi-One";
+    line-height: 25px !important;
+    text-align: justify;
+}
+
+.myanmar-font {
+    font-family: "Zawgyi-One";
+    //line-height: 25px;
+}
+
+.plus {
+    line-height: 30px !important;
+}
+
+.list-disc {
+    list-style-type: disc !important;
+}
+
+.list-number {
+    list-style: decimal !important;
+}
+
+.pad-5 {
+    padding: 0 5px;
+}
+
+.pad-10 {
+    padding: 0 10px;
+}
+
+.pad-15 {
+    padding: 0 15px;
+}
+
+.pad-20 {
+    padding: 0 20px;
+}
+
+.pad-30 {
+    padding: 0 30px;
+}
+
+.pad-40 {
+    padding: 0 40px;
+}
+
+.pad-top-10 {
+    padding-top: 10px;
+}
+
+.pad-top-15 {
+    padding-top: 15px;
+}
+
+.pad-bot-10 {
+    padding-bottom: 10px;
+}
+
+.pad-bot-15 {
+    padding-bottom: 15px;
+}
+
+.pad-bot-20 {
+    padding-bottom: 20px;
+}
+
+
+
+/*
+.service-header h2 {
+    padding: 20px 0 10px;
+    text-align: center;
+    color: #fff !important;
+    background-color: #ff851d;
+}
+
+.product-image {
+    margin: 0 auto 0 !important;
+}*/
+
+/* custom btn */
+
+.btn-lg-primary {
+    color: #ff851d !important;
+    border: 4px solid #ff851d;
+    padding: 0 30px;
+    font-size: 1.2em;
+    display: inline-block !important;
+    height: 55px;
+    line-height: 48px;
+    //transition: .3s;
+}
+
+.btn-lg-primary:hover,
+.btn-lg-primary:active {
+    color: #fff !important;
+    background: #ff851d !important;
+    border-color: #B35E14 !important;
+}
+
+
+/* Footer */
+.address-list li i {
+
+}
+
+
+#success-msg {
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+}
+
+#error-msg {
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+}
