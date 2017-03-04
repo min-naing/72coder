@@ -55,7 +55,7 @@
                             <div class="item">
                                 <div class="detail">
                                     <h5><a href="{{ url('/books/laravel') }}">PHP with Laravel 5.3</a></h5>
-                                    <p>Laravel သင္ခန္းစာ ကို အခု ပင္ order မွာယူ ႏုိင္ၿပီေနာ္...</p>
+                                    <p class="myanmar-font">Laravel သင္ခန္းစာ ကို အခု ပင္ order မွာယူ ႏုိင္ၿပီေနာ္...</p>
                                     <span>20000 kyats</span>
 
                                 </div>
@@ -182,14 +182,14 @@
                 <!-- Content -->
                 <div class="row">
 
-                    <div class="col-lg-3 col-xs-6 ">
+                    <div class="col-lg-3 col-sm-6 ">
                         <div class="product-box">
                             <div class="">
                                 <img src="{{ asset('images/web.jpg') }}" class="img-responsive service" alt="">
                             </div>
                             <div class="product-detail" align="center">
                                 <h4>Services</h4>
-                                <a href="#" class="btn-1 shadow-0 sm">အေသးစိတ္ ေလ့လာရန္</a>
+                                <a href="#" class="btn-1 shadow-0 sm"><span class="myanmar-font">အေသးစိတ္ ေလ့လာရန္</span></a>
                             </div>
                         </div>
                     </div>
@@ -206,26 +206,26 @@
                         </div>
                     </div>--}}
 
-                    <div class="col-lg-3 col-xs-6">
+                    <div class="col-lg-3 col-sm-6">
                         <div class="product-box">
                             <div class="">
                                 <img src="{{ asset('images/books.png') }}" class="img-responsive service" alt="">
                             </div>
                             <div class="product-detail" align="center">
                                 <h4>Books</h4>
-                                <a href="{{ url('/books') }}" class="btn-1 shadow-0 sm">အေသးစိတ္ ေလ့လာရန္</a>
+                                <a href="{{ url('/books/home') }}" class="btn-1 shadow-0 sm"><span class="myanmar-font">အေသးစိတ္ ေလ့လာရန္</span></a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-xs-6">
+                    <div class="col-lg-3 col-sm-6">
                         <div class="product-box">
                             <div class="">
                                 <img src="{{ asset('images/class.png') }}" class="img-responsive service" alt="">
                             </div>
                             <div class="product-detail" align="center">
                                 <h4>Classes</h4>
-                                <a href="{{ url('/class') }}" class="btn-1 shadow-0 sm">အေသးစိတ္ ေလ့လာရန္</a>
+                                <a href="{{ url('/class/home') }}" class="btn-1 shadow-0 sm"><span class="myanmar-font">အေသးစိတ္ ေလ့လာရန္</span></a>
                             </div>
                         </div>
                     </div>

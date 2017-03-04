@@ -15,6 +15,13 @@
 
     <link rel="icon" href="{{ asset('images/logo.png') }}">
 
+    <style>
+        @font-face {
+            font-family: 'Zawgyi-One';
+            src: url('fonts/Zawgyi-One.ttf');
+        }
+    </style>
+
     <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/animate.css') }}">

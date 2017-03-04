@@ -1,9 +1,4 @@
 
-@font-face {
-    font-family: 'Zawgyi-One';
-    src: url('fonts/Zawgyi-One.ttf');
-}
-
 .product-box img.service {
     padding: 10px 10px 0;
     height: 200px !important;
